@@ -26,3 +26,7 @@ jobs:
         with:
           push: true
           tags: chan2slo/homeweb:latest   # 이 이름으로 Docker Hub에 업로드 #test
+          build-args: |
+            HOMEWEB_USER=${{ secrets.HOMEWEB_USER }}
+            HOMEWEB_PW=${{ secrets.HOMEWEB_PW }}
+            HOMEWEB_KEY=${{ secrets.HOMEWEB_KEY }}

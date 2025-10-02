@@ -1,11 +1,14 @@
 from flask import Flask, request, session, redirect, url_for, render_template, flash
 from wakeonlan import send_magic_packet
+import os
 
+USERNAME = os.environ.get("HOMEWEB_USER", "default_user")
+PASSWORD = os.environ.get("HOMEWEB_PW", "default_pw")
 app = Flask(__name__)
-app.secret_key = "0210c6978574a3460f1bddf0cf76a15dd14a9d9c384590929582a5c011adb38a"
+app.secret_key = os.environ.get("HOMEWEB_KEY", "default_key")
 
-USERNAME = "chan2slo"
-PASSWORD = "jichan88!"
+USERNAME = os.environ.get("HOMEWEB_USER", "default_user")
+PASSWORD = os.environ.get("HOMEWEB_PW", "default_pw")
 TARGET_MAC = "9C:6B:00:9C:27:71"
 BROADCAST_IP = "10.0.0.255"
 
