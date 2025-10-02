@@ -38,4 +38,4 @@ def wake():
     return redirect(url_for("dashboard"))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5090)
+    app.run(host="0.0.0.0", port=5080)
