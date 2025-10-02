@@ -1,0 +1,98 @@
+/* 기본 스타일 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+/* 공통 카드 박스 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 300px;
+}
+
+/* 제목 */
+.container h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* 입력폼 */
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.container input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* 버튼 */
+.container button {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+/* 기존 스타일 그대로 두고 아래 추가 */
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    animation: fadein 0.5s, fadeout 0.5s 3.5s; /* 4초 후 사라짐 */
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-error {
+    background-color: #dc3545;
+}
+
+@keyframes fadein {
+    from { opacity: 0; transform: translateX(-50%) translateY(-10px);}
+    to { opacity: 1; transform: translateX(-50%) translateY(0);}
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

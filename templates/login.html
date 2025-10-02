@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🔑 로그인</h2>
+        <form method="post">
+            <input type="text" name="username" placeholder="아이디">
+            <input type="password" name="password" placeholder="비밀번호">
+            <button type="submit">로그인</button>
+        </form>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ msg }}
+          </div>
+          <script>
+            setTimeout(() => {
+                const alertBox = document.querySelector(".alert");
+                if (alertBox) alertBox.remove();
+            }, 4000);
+          </script>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
