@@ -25,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: chan2slo/homeweb_test:latest   # 이 이름으로 Docker Hub에 업로드 #test
+          tags: chan2slo/homeweb:latest   # 이 이름으로 Docker Hub에 업로드 #test
