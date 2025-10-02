@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>대시보드</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
 <body>
-    <div class="container">
+    <!-- 헤더바 -->
+    <div class="header">
+        <h1>대시보드</h1>
+        <form action="/logout" method="post">
+            <button type="submit">🚪 로그아웃</button>
+        </form>
+    </div>
+
+    <!-- 중앙 컨테이너 -->
+    <div class="container" style="margin-top:80px;">
         <h2>💻 PC 전원 제어</h2>
         <form action="/wake" method="post">
             <button type="submit">💡 Wake Up</button>
@@ -18,15 +20,6 @@
         <div class="alert alert-success">
           {{ messages[0] }}
         </div>
-        <script>
-          // 4초 후 알림 박스 자동 제거
-          setTimeout(() => {
-              const alertBox = document.querySelector(".alert");
-              if (alertBox) alertBox.remove();
-          }, 4000);
-        </script>
       {% endif %}
     {% endwith %}
 </body>
-</html>
-

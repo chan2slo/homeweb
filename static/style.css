@@ -1,3 +1,43 @@
+/* 헤더바 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.header form {
+    margin: 0;
+}
+
+.header button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.header button:hover {
+    background-color: #e60000;
+}
+
+
 /* 기본 스타일 */
 body {
     display: flex;
