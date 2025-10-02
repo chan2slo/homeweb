@@ -31,7 +31,7 @@ def logout():
     # 세션 초기화
     session.clear()
     # 메시지 띄우기
-    flash("로그아웃 되었습니다.")
+    flash("로그아웃 되었습니다.", "success")
     # 로그인 페이지로 리다이렉트
     return redirect(url_for("login"))
 
@@ -46,7 +46,7 @@ def wake():
     if not session.get("logged_in"):
         return redirect(url_for("login"))
     send_magic_packet(TARGET_MAC, ip_address=BROADCAST_IP, port=9)
-    flash("✅ 매직패킷 전송 완료!")
+    flash("✅ 매직패킷 전송 완료!", "success")
     return redirect(url_for("dashboard"))
 
 if __name__ == "__main__":
