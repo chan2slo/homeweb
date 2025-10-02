@@ -26,6 +26,15 @@ def login():
             return redirect(url_for("login"))  # 다시 로그인 페이지로
     return render_template("login.html")
 
+@app.route("/logout", methods=["POST"])
+def logout():
+    # 세션 초기화
+    session.clear()
+    # 메시지 띄우기
+    flash("로그아웃 되었습니다.")
+    # 로그인 페이지로 리다이렉트
+    return redirect(url_for("login"))
+
 @app.route("/dashboard")
 def dashboard():
     if not session.get("logged_in"):
